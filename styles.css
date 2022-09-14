@@ -63,8 +63,8 @@ body {
 }
 #result {
   position: fixed;
-  top: 10%; 
-  left: 10%;
+  top: 50%; 
+  left: 50%;
   transform: translate(-50%, -50%);
   height: 250px;
   width: 400px;
@@ -185,8 +185,13 @@ button {
   .box-container {
     padding: 0 20px;
     width: 100%;
+    text-align: center;
   }
   .card {
     flex-direction: column;
+  }
+  #histories{
+    display: block;
+    text-align: center;
   }
 }
