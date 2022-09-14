@@ -10,16 +10,53 @@
     ">
 </head>
 <body>
+    <header>
+        <h1 class="text-success text-center fw-bold">My blogs</h1>
+    </header>
     <!-- blogs  -->
    <main>
     <section>
-        <div class="card" style="width: 18rem;">
+        <div class="card w-75 mx-auto my-5 bg-light">
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="card-link">Card link</a>
-              <a href="#" class="card-link">Another link</a>
+              <h5 class="card-title text-success text-center ">Blogs (1)</h5>
+              <h6 class="card-subtitle mb-2 text-danger">difference between sessionstorage and localstorage</h6>
+              <p class="card-text">The difference between localStorage and sessionStorage has to do with lifetime and scope: how long the data is saved for and who the data is accessible to. Session storage is destroyed once the user closes the browser whereas, Local storage stores data with no expiration date. <br>
+
+                localStorage and sessionStorage are almost identical and have the same API. The difference is that with sessionStorage , the data is persisted only until the window or tab is closed. With localStorage , the data is persisted until the user manually clears the browser cache or until your web app clears the data.
+            </p>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title text-success text-center ">Blogs (2)</h5>
+              <h6 class="card-subtitle mb-2 text-danger"> difference between global scope and block scope</h6>
+              <p class="card-text">In a browser environment, the global scope is controlled by the window object while in Node. js, it's controlled by the global object. Block scopes are what you get when you use if statements, for statements, and the like. <br>
+
+                ES6 introduced two important new JavaScript keywords: let and const.
+                These two keywords provide Block Scope in JavaScript.
+                Variables declared inside a { } block cannot be accessed from outside the block.
+
+                Variables declared Globally (outside any function) have Global Scope.
+            </p>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title text-success text-center ">Blogs (3)</h5>
+              <h6 class="card-subtitle mb-2 text-danger"> how to work javascript event loop</h6>
+              <p class="card-text">The Event Loop has one simple job — to monitor the Call Stack and the Callback Queue. If the Call Stack is empty, the Event Loop will take the first event from the queue and will push it to the Call Stack, which effectively runs it. Such an iteration is called a tick in the Event Loop.
+            </p>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title text-success text-center ">Blogs (4)</h5>
+              <h6 class="card-subtitle mb-2 text-danger"> when we get undefined</h6>
+              <p class="card-text">variable that is not initialized will give undefined <br>
+                function will no return <br>
+                parameter that is not passed will be undefined <br>
+                if return has nothing on the right side will return undefined <br>
+                property that doesn't exists on an object will give you undefined <br>
+                accessing array elements outside of the index range will give you undefined <br>
+                deleteing an element inside in array 
+                <br>
+                set a value directly to undefined
+
+            </p>
             </div>
           </div>
     </section>
