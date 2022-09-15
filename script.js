@@ -5,6 +5,7 @@ const countdownOverlay = document.getElementById("countdown");
 const resultModal = document.getElementById("result");
 const modalBackground = document.getElementById("modal-background");
 
+
 // variables
 let userText = "";
 let errorCount = 0;
@@ -69,7 +70,12 @@ const gameOver = () => {
   // the current time is the finish time
   // so total time taken is current time - start time
   const finishTime = new Date().getTime();
-  const timeTaken = Math.round((finishTime - startTime) / 1000);
+  const time = (finishTime - startTime) / 1000;
+  const timeTaken = Math.round(time);
+
+  const word = (questionText.length)/ 5;
+  const typeSpeed = Math.round((word / timeTaken) * 60);
+  // console.log(userText.length)
 
   // show result modal
   resultModal.innerHTML = "";
@@ -83,11 +89,12 @@ const gameOver = () => {
   resultModal.innerHTML += `
     <h1>Finished!</h1>
     <p>You took: <span class="bold">${timeTaken}</span> seconds</p>
+    <p>Your typing speed <span class="bold">${typeSpeed} </span> WPM</p>
     <p>You made <span class="bold red">${errorCount}</span> mistakes</p>
     <button onclick="closeModal()">Close</button>
   `;
 
-  addHistory(questionText, timeTaken, errorCount);
+  addHistory(questionText, timeTaken, errorCount, typeSpeed);
 
   // restart everything
   startTime = null;
