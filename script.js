@@ -42,7 +42,7 @@ const typeController = (e) => {
   userText += newLetter;
 
   const newLetterCorrect = validate(newLetter);
-
+  
   if (newLetterCorrect) {
     display.innerHTML += `<span class="green">${newLetter === " " ? "▪" : newLetter}</span>`;
   } else {
@@ -69,7 +69,7 @@ const gameOver = () => {
   // the current time is the finish time
   // so total time taken is current time - start time
   const finishTime = new Date().getTime();
-  const timeTaken = (finishTime - startTime) / 1000;
+  const timeTaken = Math.round((finishTime - startTime) / 1000);
 
   // show result modal
   resultModal.innerHTML = "";
@@ -102,6 +102,7 @@ const closeModal = () => {
 };
 
 const start = () => {
+  
   // If already started, do not start again
   if (startTime) return;
 
@@ -116,6 +117,7 @@ const start = () => {
       // -------------- START TYPING -----------------
       document.addEventListener("keydown", typeController);
       countdownOverlay.style.display = "none";
+      countdownOverlay.innerText = ''
       display.classList.remove("inactive");
 
       clearInterval(startCountdown);
@@ -124,6 +126,7 @@ const start = () => {
     }
     count--;
   }, 1000);
+  
 };
 
 // START Countdown
@@ -140,3 +143,6 @@ setInterval(() => {
 
   document.getElementById("show-time").innerHTML = `${startTime ? timeSpent : 0} seconds`;
 }, 1000);
+
+
+
